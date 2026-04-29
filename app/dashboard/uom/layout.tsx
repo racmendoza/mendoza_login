@@ -10,7 +10,7 @@ import SessionTimeoutWrapper from "@/components/SessionTimeoutWrapper";
 import SessionSync from "@/components/SessionSync";
 import EditUserModal from "../admin/users/EditUserModal";
 import ChangeUserPasswordModal from "../admin/users/ChangeUserPasswordModal";
-import { getMyProfile, updateMyProfile, changeMyPassword, UserProfile } from "./actions";
+import { getMyProfile, updateMyProfile, changeMyPassword, UserProfile } from "../actions";
 
 // --- Reusable Dropdown Component ---
 interface NavItem {
