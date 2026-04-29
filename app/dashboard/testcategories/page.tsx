@@ -1,6 +1,6 @@
 "use client";
 
-import {shadowFrozen, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRowOddEven } from "@/components/TableComponents";
+import { shadowFrozen, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRowOddEven } from "@/components/TableComponents";
 import { ChangeEvent, useCallback, useEffect, useRef, useState } from "react";
 import { addTestCtg, getTestCtgs, removeTestCtgs, TestCtg, updateTestCtg } from "./actions";
 import { useSession } from "@/lib/auth-client";

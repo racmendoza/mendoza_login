@@ -261,8 +261,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <div className="flex items-center gap-6">
             <NavButton label="Home" Icon={LucideHouse} href="/dashboard"></NavButton>
             <NavButton label="UOMs" Icon={LucideRuler} href="/dashboard/uom"></NavButton>
-            <NavButton label="Test Categories" Icon={LucideFlaskConical} href="/dashboard/testctg"></NavButton>
-            <NavButton label="Medical Tests" Icon={LucideHeartPulse} href="/dashboard/medtest"></NavButton>
+            <NavButton label="Test Categories" Icon={LucideFlaskConical} href="/dashboard/testcategories"></NavButton>
+            <NavButton label="Medical Tests" Icon={LucideHeartPulse} href="/dashboard/medicaltests"></NavButton>
           </div>
 
           <div className="flex items-center gap-6">
