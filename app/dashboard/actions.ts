@@ -15,7 +15,7 @@ export interface UserProfile {
   active: boolean;
 }
 
-export const getMyProfile = async (expectedUserId?: string): Promise<UserProfile | null> => {
+export async function getMyProfile(expectedUserId?: string): Promise<UserProfile | null> {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
@@ -38,14 +38,14 @@ export const getMyProfile = async (expectedUserId?: string): Promise<UserProfile
   return rows[0] || null;
 }
 
-export const updateMyProfile = async (data: {
+export async function updateMyProfile(data: {
   id: string;
   email: string;
   name: string;
   fullname: string;
   birthdate: string;
   gender: string;
-}): Promise<void> => {
+}): Promise<void> {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
@@ -80,7 +80,7 @@ export const updateMyProfile = async (data: {
   revalidatePath("/dashboard");
 }
 
-export const changeMyPassword = async (userId: string, newPassword: string): Promise<void> => {
+export async function changeMyPassword(userId: string, newPassword: string): Promise<void> {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
