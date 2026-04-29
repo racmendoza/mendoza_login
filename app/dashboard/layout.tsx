@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { House, UserCog, ChevronDown, ShieldCheck, LucideIcon, LogOut } from "lucide-react";
+import { UserCog, ChevronDown, ShieldCheck, LucideIcon, LogOut, LucideHouse, LucideRuler, LucideFlaskConical, LucidePaperclip, LucideNewspaper, LucideHeartPulse } from "lucide-react";
 import { useSession, signOut } from "@/lib/auth-client";
 import ConfirmModal from "@/components/ConfirmModal";
 import { showMessage } from "@/components/MessageModal";
@@ -18,6 +18,23 @@ interface NavItem {
   onClick: () => void;
   icon?: LucideIcon;
   className?: string;
+}
+
+function NavButton({label, Icon, href}: {
+  label: string;
+  Icon: LucideIcon;
+  href: string
+}) {
+  const router = useRouter();
+
+  return (
+    <button
+      onClick={() => router.push(href)}
+      className="flex items-center gap-2 text-lg font-bold px-4 py-2 rounded hover:bg-white hover:text-blue-600 transition-colors"
+    >
+      <Icon size={20} /> {label}
+    </button>
+  );
 }
 
 function NavDropdown({ label, Icon, items, isOpen, onToggle }: {
@@ -235,12 +252,18 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <SessionSync />
       <div className="min-h-screen flex flex-col bg-gray-50">
         <header className="bg-blue-600 shadow px-6 py-2 flex items-center justify-between text-white">
-          <button
+          {/* <button
             onClick={() => { router.push("/dashboard"); setOpenMenu(null); }}
             className="flex items-center gap-2 text-lg font-bold px-4 py-2 rounded hover:bg-white hover:text-blue-600 transition-colors"
           >
             <House size={20} /> Home
-          </button>
+          </button> */}
+          <div className="flex items-center gap-6">
+            <NavButton label="Home" Icon={LucideHouse} href="/dashboard"></NavButton>
+            <NavButton label="UOMs" Icon={LucideRuler} href="/dashboard/uom"></NavButton>
+            <NavButton label="Test Categories" Icon={LucideFlaskConical} href="/dashboard/testctg"></NavButton>
+            <NavButton label="Medical Tests" Icon={LucideHeartPulse} href="/dashboard/medtest"></NavButton>
+          </div>
 
           <div className="flex items-center gap-6">
             <NavDropdown 
