@@ -8,7 +8,7 @@ import { ChangeEvent, Key, useCallback, useEffect, useRef, useState } from "reac
 import { addMedTest, getMedTests, MedTest, removeMedTest, updateMedTest } from "./actions";
 import EditableField, { createOptionEditor, NumberEditor, TextEditor } from "@/components/EditableField";
 import { getUOMs, UOM } from "../uom/actions";
-import { addTestCtg, getTestCtgs, TestCtg } from "../testcategories/actions";
+import { addTestCtg, getTestCtgs, TestCtg } from "../testctg/actions";
 import ConfirmModal from "@/components/ConfirmModal";
 import { DownloadPdfButton } from "@/components/pdf/DownloadPdfButton";
 import DownloadExcelButton from "@/components/excel/DownloadExcel";
